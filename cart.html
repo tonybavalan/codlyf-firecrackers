@@ -1,0 +1,210 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Annamalai Fireworks - Your Cart</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;700&family=Playfair+Display:wght@700&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <link rel="stylesheet" href="styles.css">
+</head>
+
+<body class="bg-[var(--color-diwali-light-bg)] flex flex-col min-h-screen">
+    <header class="hero-bg text-white shadow-lg relative overflow-hidden rounded-b-xl pb-12 md:pb-16">
+        <nav class="container mx-auto px-4 py-4 flex justify-between items-center">
+            <div
+                class="bg-[var(--color-diwali-secondary)] text-white px-4 py-2 rounded-md font-bold text-lg shadow-md">
+                ANNAMALAI FIREWORKS
+            </div>
+            <div class="hidden md:flex space-x-8 text-lg">
+                <a href="index.html"
+                    class="hover:text-[var(--color-diwali-primary)] transition-colors duration-200">HOME</a>
+                <a href="products.html"
+                    class="hover:text-[var(--color-diwali-primary)] transition-colors duration-200">SHOP</a>
+                <a href="cart.html"
+                    class="hover:text-[var(--color-diwali-primary)] transition-colors duration-200 text-[var(--color-diwali-primary)] font-semibold">CART</a>
+                <a href="index.html#contact-section"
+                    class="hover:text-[var(--color-diwali-primary)] transition-colors duration-200">CONTACT</a>
+            </div>
+            <div class="md:hidden">
+                <button class="text-white text-2xl focus:outline-none">
+                    <i class="fas fa-bars"></i>
+                </button>
+            </div>
+        </nav>
+
+        <div class="container mx-auto px-4 pt-8 md:pt-12 text-left">
+            <h1 class="text-4xl md:text-6xl font-bold mb-4 leading-tight max-w-xl animate-fade-in-down">
+                YOUR FIRECRACKER <br>CART
+            </h1>
+            <p class="text-xl md:text-2xl opacity-90 mb-8 max-w-xl animate-fade-in-up">
+                Review Your Selections for Diwali
+            </p>
+        </div>
+    </header>
+
+    <main class="container mx-auto px-4 py-12 flex-grow">
+        <section class="bg-white p-8 rounded-xl shadow-md">
+            <h2
+                class="text-3xl font-bold text-center text-[var(--color-diwali-primary)] mb-8 pb-4 border-b-2 border-gray-200">
+                Items in Your Cart
+            </h2>
+
+            <div id="cart-items-container" class="space-y-6 mb-8">
+                <div
+                    class="flex flex-col sm:flex-row items-center bg-[var(--color-diwali-accent-bg)] p-4 rounded-lg shadow-sm border border-gray-200">
+                    <img src="https://placehold.co/100x100/FF5722/FFFFFF?text=Aerial+Shot" alt="Grand Sky Blaster"
+                        class="w-24 h-24 object-cover rounded-md mr-4 mb-4 sm:mb-0">
+                    <div class="flex-grow text-center sm:text-left">
+                        <h3 class="text-xl font-bold text-[var(--color-diwali-dark)]">Grand Sky Blaster (100-Shot)</h3>
+                        <p class="text-gray-700 text-sm">A spectacular multi-shot aerial display.</p>
+                        <p class="text-lg font-semibold text-[var(--color-diwali-primary)] mt-1">₹1250.00</p>
+                    </div>
+                    <div class="flex items-center mt-4 sm:mt-0">
+                        <label for="qty-1" class="sr-only">Quantity for Grand Sky Blaster</label>
+                        <input type="number" id="qty-1" value="1" min="1"
+                            class="w-20 text-center border border-gray-300 rounded-md py-2 px-3 text-gray-700 focus:outline-none focus:ring-2 focus:ring-[var(--color-diwali-primary)] mr-3">
+                        <button
+                            class="text-[var(--color-diwali-secondary)] hover:text-red-700 transition-colors duration-200 text-2xl"
+                            aria-label="Remove item">
+                            <i class="fas fa-trash-alt"></i>
+                        </button>
+                    </div>
+                </div>
+
+                <div
+                    class="flex flex-col sm:flex-row items-center bg-[var(--color-diwali-accent-bg)] p-4 rounded-lg shadow-sm border border-gray-200">
+                    <img src="https://placehold.co/100x100/FFC107/FFFFFF?text=Sparklers" alt="Kids' Joy Sparklers"
+                        class="w-24 h-24 object-cover rounded-md mr-4 mb-4 sm:mb-0">
+                    <div class="flex-grow text-center sm:text-left">
+                        <h3 class="text-xl font-bold text-[var(--color-diwali-dark)]">Kids' Joy Sparklers (10-Pack)</h3>
+                        <p class="text-gray-700 text-sm">Safe and bright sparklers for little hands.</p>
+                        <p class="text-lg font-semibold text-[var(--color-diwali-primary)] mt-1">₹150.00</p>
+                    </div>
+                    <div class="flex items-center mt-4 sm:mt-0">
+                        <label for="qty-2" class="sr-only">Quantity for Kids' Joy Sparklers</label>
+                        <input type="number" id="qty-2" value="2" min="1"
+                            class="w-20 text-center border border-gray-300 rounded-md py-2 px-3 text-gray-700 focus:outline-none focus:ring-2 focus:ring-[var(--color-diwali-primary)] mr-3">
+                        <button
+                            class="text-[var(--color-diwali-secondary)] hover:text-red-700 transition-colors duration-200 text-2xl"
+                            aria-label="Remove item">
+                            <i class="fas fa-trash-alt"></i>
+                        </button>
+                    </div>
+                </div>
+                <div id="empty-cart-message" class="text-center py-12 hidden">
+                    <p class="text-2xl text-gray-600 font-semibold mb-4">Your cart is empty!</p>
+                    <a href="products.html"
+                        class="bg-[var(--color-diwali-primary)] hover:bg-[var(--color-diwali-secondary)] text-white font-bold py-3 px-8 rounded-full shadow-lg transition-all duration-300 transform hover:scale-105 focus:outline-none focus:ring-4 focus:ring-[var(--color-diwali-primary)]">
+                        Start Shopping
+                    </a>
+                </div>
+            </div>
+
+            <div class="bg-[var(--color-info-bar-bg)] p-6 rounded-lg shadow-inner flex flex-col md:flex-row justify-between items-center text-[var(--color-diwali-dark)] font-semibold">
+                <div class="mb-4 md:mb-0">
+                    <p class="text-xl">Subtotal: <span id="cart-subtotal" class="text-2xl text-[var(--color-diwali-primary)]">₹1550.00</span></p>
+                    <p class="text-sm text-gray-600 mt-1">Shipping and taxes calculated at checkout.</p>
+                </div>
+                <button
+                    class="bg-[var(--color-diwali-gold)] hover:bg-[var(--color-diwali-primary)] text-[var(--color-diwali-dark)] font-bold py-3 px-8 rounded-full shadow-lg transition-all duration-300 transform hover:scale-105 focus:outline-none focus:ring-4 focus:ring-[var(--color-diwali-gold)]">
+                    Proceed to Checkout
+                </button>
+            </div>
+        </section>
+    </main>
+
+    <footer class="bg-[var(--color-diwali-dark)] text-white text-center py-6 mt-auto rounded-t-xl shadow-inner">
+        <p class="text-lg">&copy; 2025 Annamalai Fireworks. Light Up Your Diwali with our crackers.</p>
+    </footer>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', function () {
+            // In a real application, cart data would come from localStorage or a server.
+            // For now, we'll use placeholder values.
+            const cartItems = [
+                { id: 1, name: 'Grand Sky Blaster (100-Shot)', price: 1250.00, quantity: 1, image: 'https://placehold.co/100x100/FF5722/FFFFFF?text=Aerial+Shot' },
+                { id: 2, name: 'Kids\' Joy Sparklers (10-Pack)', price: 150.00, quantity: 2, image: 'https://placehold.co/100x100/FFC107/FFFFFF?text=Sparklers' }
+            ];
+
+            const cartItemsContainer = document.getElementById('cart-items-container');
+            const cartSubtotalElement = document.getElementById('cart-subtotal');
+            const emptyCartMessage = document.getElementById('empty-cart-message');
+
+            function renderCart() {
+                if (cartItems.length === 0) {
+                    cartItemsContainer.innerHTML = ''; // Clear any existing items
+                    emptyCartMessage.classList.remove('hidden');
+                    cartSubtotalElement.textContent = '₹0.00';
+                    return;
+                } else {
+                    emptyCartMessage.classList.add('hidden');
+                }
+
+                cartItemsContainer.innerHTML = ''; // Clear existing items before re-rendering
+                let subtotal = 0;
+
+                cartItems.forEach(item => {
+                    const itemTotal = item.price * item.quantity;
+                    subtotal += itemTotal;
+
+                    const itemElement = document.createElement('div');
+                    itemElement.classList.add('flex', 'flex-col', 'sm:flex-row', 'items-center', 'bg-[var(--color-diwali-accent-bg)]', 'p-4', 'rounded-lg', 'shadow-sm', 'border', 'border-gray-200');
+                    itemElement.innerHTML = `
+                        <img src="${item.image}" alt="${item.name}" class="w-24 h-24 object-cover rounded-md mr-4 mb-4 sm:mb-0">
+                        <div class="flex-grow text-center sm:text-left">
+                            <h3 class="text-xl font-bold text-[var(--color-diwali-dark)]">${item.name}</h3>
+                            <p class="text-gray-700 text-sm">Price: ₹${item.price.toFixed(2)}</p>
+                            <p class="text-lg font-semibold text-[var(--color-diwali-primary)] mt-1">₹${itemTotal.toFixed(2)}</p>
+                        </div>
+                        <div class="flex items-center mt-4 sm:mt-0">
+                            <label for="qty-${item.id}" class="sr-only">Quantity for ${item.name}</label>
+                            <input type="number" id="qty-${item.id}" value="${item.quantity}" min="1"
+                                class="w-20 text-center border border-gray-300 rounded-md py-2 px-3 text-gray-700 focus:outline-none focus:ring-2 focus:ring-[var(--color-diwali-primary)] mr-3"
+                                data-item-id="${item.id}">
+                            <button class="remove-item-btn text-[var(--color-diwali-secondary)] hover:text-red-700 transition-colors duration-200 text-2xl"
+                                data-item-id="${item.id}" aria-label="Remove ${item.name}">
+                                <i class="fas fa-trash-alt"></i>
+                            </button>
+                        </div>
+                    `;
+                    cartItemsContainer.appendChild(itemElement);
+                });
+
+                cartSubtotalElement.textContent = `₹${subtotal.toFixed(2)}`;
+
+                // Add event listeners for quantity changes and remove buttons
+                cartItemsContainer.querySelectorAll('input[type="number"]').forEach(input => {
+                    input.addEventListener('change', function () {
+                        const itemId = parseInt(this.dataset.itemId);
+                        const newQuantity = parseInt(this.value);
+                        const itemIndex = cartItems.findIndex(item => item.id === itemId);
+                        if (itemIndex > -1 && newQuantity >= 1) {
+                            cartItems[itemIndex].quantity = newQuantity;
+                            renderCart(); // Re-render to update totals
+                        }
+                    });
+                });
+
+                cartItemsContainer.querySelectorAll('.remove-item-btn').forEach(button => {
+                    button.addEventListener('click', function () {
+                        const itemId = parseInt(this.dataset.itemId);
+                        const itemIndex = cartItems.findIndex(item => item.id === itemId);
+                        if (itemIndex > -1) {
+                            cartItems.splice(itemIndex, 1); // Remove item from array
+                            renderCart(); // Re-render the cart
+                        }
+                    });
+                });
+            }
+
+            renderCart(); // Initial render of the cart
+        });
+    </script>
+</body>
+
+</html>

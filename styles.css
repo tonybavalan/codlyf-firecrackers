@@ -1,12 +1,12 @@
-/* Custom Diwali Color Palette - Modified for Vibrant Colors */
+/* Custom Diwali Color Palette - South Indian Inspired & Vibrant */
 :root {
-    --color-diwali-primary: #FF9933; /* A brighter, more intense orange */
-    --color-diwali-secondary: #DD2200; /* A richer, deeper red */
-    --color-diwali-gold: #FFCC00; /* A more radiant gold */
-    --color-diwali-dark: #331A00; /* Slightly lighter dark brown for better contrast */
-    --color-diwali-light-bg: #FFF5E6; /* A very light, warm background, less muted */
-    --color-diwali-accent-bg: #FFEBD9; /* A slightly deeper warm background, less muted */
-    --color-info-bar-bg: #F2E3D5; /* A lighter beige/brown for the info bar */
+    --color-diwali-primary: #FF5722; /* A warm, inviting Vermilion Orange - often seen in temples/festivals */
+    --color-diwali-secondary: #DD2200; /* A rich, deep Rani Pink/Crimson - vibrant and festive */
+    --color-diwali-gold: #FFC107; /* A bright, pure Gold/Marigold Yellow - symbolizing prosperity */
+    --color-diwali-dark: #3E2723; /* A deep, rich Espresso Brown - grounding and elegant */
+    --color-diwali-light-bg: #FFFDE7; /* A creamy, soft Ivory/Light Yellow - warm and welcoming */
+    --color-diwali-accent-bg: #FFF3E0; /* A soft Peach/Apricot - gentle accent for cards */
+    --color-info-bar-bg: #FFE0B2; /* A warm, muted Orange/Peach - for the info bar */
 }
 
 /* General Body & Typography */
