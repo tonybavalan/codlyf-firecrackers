@@ -1,142 +1,20 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Codlyf Firecrackers - Illuminate Your Diwali</title>
+    <title>Annamalai Fireworks - Illuminate Your Diwali</title>
     <!-- Load Tailwind CSS from CDN -->
     <script src="https://cdn.tailwindcss.com"></script>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;700&family=Playfair+Display:wght@700&display=swap" rel="stylesheet">
+    <link
+        href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;700&family=Playfair+Display:wght@700&display=swap"
+        rel="stylesheet">
     <!-- Font Awesome for icons (for the info bar) -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
-    <style>
-        /* Custom Diwali Color Palette */
-        :root {
-            --color-diwali-primary: #FF6600; /* Vibrant Orange */
-            --color-diwali-secondary: #CC0000; /* Deep Red */
-            --color-diwali-gold: #FFD700; /* Gold */
-            --color-diwali-dark: #2A1C00; /* Very Dark Brown/Black for text/footer */
-            --color-diwali-light-bg: #FFF8F0; /* Very light, warm background */
-            --color-diwali-accent-bg: #FFF0E0; /* Slightly deeper warm background */
-            --color-info-bar-bg: #E0D9C7; /* Light beige/brown for the info bar */
-        }
-
-        /* General Body & Typography */
-        body {
-            font-family: 'Inter', sans-serif;
-            line-height: 1.6;
-            color: var(--color-diwali-dark);
-            min-height: 100vh;
-            display: flex;
-            flex-direction: column;
-            background-color: var(--color-diwali-light-bg); /* Warm light background */
-        }
-
-        /* Headings using Playfair Display for a festive touch */
-        h1, h2 {
-            font-family: 'Playfair Display', serif;
-            color: var(--color-diwali-primary); /* Primary orange for headings */
-        }
-
-        /* Hero background with overlay and a subtle crackle effect */
-        .hero-bg {
-            background: linear-gradient(rgba(0, 0, 0, 0.75), rgba(0, 0, 0, 0.75)), url('https://placehold.co/1600x900/1A202C/FFFFFF?text=Night+City+Fireworks') no-repeat center center/cover;
-            /* Fallback for image loading errors, or a more dynamic image */
-            background-image: linear-gradient(rgba(0, 0, 0, 0.75), rgba(0, 0, 0, 0.75)), url('https://source.unsplash.com/random/1600x900/?night-city,fireworks,diwali,india');
-            position: relative;
-            overflow: hidden;
-            background-position: bottom center; /* Adjust background position */
-        }
-
-        /* Subtle crackle/sparkle animation for the hero section */
-        .hero-bg::before {
-            content: '';
-            position: absolute;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            background: radial-gradient(circle at center, rgba(255, 255, 255, 0.15) 0%, rgba(255, 255, 255, 0) 70%);
-            animation: sparkle-pulse 4s infinite alternate;
-            pointer-events: none;
-        }
-
-        @keyframes sparkle-pulse {
-            0% { transform: scale(1); opacity: 0.3; }
-            50% { transform: scale(1.1); opacity: 0.5; }
-            100% { transform: scale(1); opacity: 0.3; }
-        }
-
-        /* Marquee animation */
-        .marquee-container {
-            overflow: hidden;
-            white-space: nowrap;
-            box-shadow: inset 0 2px 5px rgba(0,0,0,0.1);
-        }
-
-        .marquee-content {
-            display: inline-block;
-            padding-left: 100%; /* Start off-screen to the right */
-            animation: marquee 20s linear infinite; /* Adjust duration as needed */
-        }
-
-        @keyframes marquee {
-            0% { transform: translateX(0); }
-            100% { transform: translateX(-100%); } /* Move fully off-screen to the left */
-        }
-
-        /* Ensure smooth scrolling for anchor links (if added later) */
-        html {
-            scroll-behavior: smooth;
-        }
-
-        /* Modal specific styles */
-        .modal-overlay {
-            background-color: rgba(0, 0, 0, 0.7);
-            z-index: 999;
-        }
-        .modal-content {
-            z-index: 1000;
-        }
-        .animate-fade-in {
-            animation: fadeIn 0.5s ease-out forwards;
-        }
-        .animate-fade-out {
-            animation: fadeOut 0.5s ease-out forwards;
-        }
-        @keyframes fadeIn {
-            from { opacity: 0; transform: translateY(-20px); }
-            to { opacity: 1; transform: translateY(0); }
-        }
-        @keyframes fadeOut {
-            from { opacity: 1; transform: translateY(0); }
-            to { opacity: 0; transform: translateY(-20px); }
-        }
-        .loading-spinner {
-            border: 4px solid rgba(255, 255, 255, 0.3);
-            border-top: 4px solid var(--color-diwali-primary); /* Use primary color for spinner */
-            border-radius: 50%;
-            width: 30px;
-            height: 30px;
-            animation: spin 1s linear infinite;
-        }
-        @keyframes spin {
-            0% { transform: rotate(0deg); }
-            100% { transform: rotate(360deg); }
-        }
-
-        /* Image animation for sections */
-        .section-image {
-            opacity: 0;
-            transform: scale(0.9);
-            transition: opacity 0.7s ease-out, transform 0.7s ease-out;
-        }
-        .section-image.is-visible {
-            opacity: 1;
-            transform: scale(1);
-        }
-    </style>
+    <link rel="stylesheet" href="styles.css">
 </head>
+
 <body class="bg-[var(--color-diwali-light-bg)]">
     <!-- Header/Hero Section -->
     <header class="hero-bg text-white shadow-lg relative overflow-hidden rounded-b-xl pb-24 md:pb-32">
@@ -144,13 +22,15 @@
         <nav class="container mx-auto px-4 py-4 flex justify-between items-center">
             <!-- Logo -->
             <div class="bg-[var(--color-diwali-secondary)] text-white px-4 py-2 rounded-md font-bold text-lg shadow-md">
-                CODLYF FIRECRACKERS
+                ANNAMALAI FIREWORKS
             </div>
             <!-- Navigation Links -->
             <div class="hidden md:flex space-x-8 text-lg">
                 <a href="#" class="hover:text-[var(--color-diwali-primary)] transition-colors duration-200">HOME</a>
-                <a href="#collection-section" class="hover:text-[var(--color-diwali-primary)] transition-colors duration-200">SHOP</a>
-                <a href="#contact-section" class="hover:text-[var(--color-diwali-primary)] transition-colors duration-200">CONTACT</a>
+                <a href="#collection-section"
+                    class="hover:text-[var(--color-diwali-primary)] transition-colors duration-200">SHOP</a>
+                <a href="#contact-section"
+                    class="hover:text-[var(--color-diwali-primary)] transition-colors duration-200">CONTACT</a>
             </div>
             <!-- Mobile Menu Icon (Hamburger) - Optional, for future expansion -->
             <div class="md:hidden">
@@ -168,7 +48,8 @@
             <p class="text-xl md:text-2xl opacity-90 mb-8 max-w-xl animate-fade-in-up">
                 Manufacturer Retailer Sattur
             </p>
-            <button class="bg-[var(--color-diwali-primary)] hover:bg-[var(--color-diwali-secondary)] text-white font-bold py-4 px-10 rounded-lg shadow-xl transition-all duration-300 transform hover:scale-105 focus:outline-none focus:ring-4 focus:ring-[var(--color-diwali-primary)] animate-bounce-once">
+            <button
+                class="bg-[var(--color-diwali-primary)] hover:bg-[var(--color-diwali-secondary)] text-white font-bold py-4 px-10 rounded-lg shadow-xl transition-all duration-300 transform hover:scale-105 focus:outline-none focus:ring-4 focus:ring-[var(--color-diwali-primary)] animate-bounce-once">
                 BUY NOW
             </button>
         </div>
@@ -176,7 +57,8 @@
 
     <!-- Info Bar Section -->
     <section class="bg-[var(--color-info-bar-bg)] py-8 shadow-md rounded-b-xl -mt-12 relative z-20">
-        <div class="container mx-auto px-4 grid grid-cols-1 md:grid-cols-3 gap-8 text-center text-[var(--color-diwali-dark)]">
+        <div
+            class="container mx-auto px-4 grid grid-cols-1 md:grid-cols-3 gap-8 text-center text-[var(--color-diwali-dark)]">
             <div class="flex flex-col items-center p-4">
                 <i class="fas fa-check-circle text-4xl text-[var(--color-diwali-primary)] mb-3"></i>
                 <h3 class="font-bold text-xl mb-1">100% Genuine</h3>
@@ -196,79 +78,124 @@
     </section>
 
     <!-- Marquee Section -->
-    <section class="bg-[var(--color-diwali-secondary)] text-white py-4 mt-8 mb-8 rounded-xl shadow-lg marquee-container">
+    <section
+        class="bg-[var(--color-diwali-secondary)] text-white py-4 mt-8 mb-8 rounded-xl shadow-lg marquee-container">
         <div class="marquee-content text-xl font-semibold tracking-wide">
-            🎉 Happy Diwali! Get 15% off on all orders above ₹2000! ✨ Limited stock available! 🚀 Shop now for the brightest celebrations! 🎇
+            🎉 Happy Diwali! Get 15% off on all orders above ₹2000! ✨ Limited stock available! 🚀 Shop now for the
+            brightest celebrations! 🎇
         </div>
     </section>
 
     <!-- Main Content Container -->
     <main class="container mx-auto px-4 py-8 flex-grow">
         <!-- Experience Section -->
-        <section class="bg-white p-8 mb-8 rounded-xl shadow-md transition-all duration-300 hover:shadow-lg flex flex-col md:flex-row items-center gap-8">
+        <section
+            class="bg-white p-8 mb-8 rounded-xl shadow-md transition-all duration-300 hover:shadow-lg flex flex-col md:flex-row items-center gap-8">
             <div class="md:w-1/2">
-                <img src="https://placehold.co/600x400/FF6600/FFFFFF?text=Diwali+Celebration" alt="Family celebrating Diwali" class="w-full h-auto rounded-lg shadow-md section-image">
+                <img src="assets/diwali-celebration.png"
+                    alt="Family celebrating Diwali" class="w-full h-auto rounded-lg shadow-md section-image">
             </div>
             <div class="md:w-1/2">
-                <h2 class="text-3xl font-bold text-center md:text-left text-[var(--color-diwali-primary)] mb-6 pb-4 border-b-2 border-gray-200">Experience the Magic of Diwali</h2>
-                <p class="text-lg text-gray-700 leading-relaxed">This Diwali, let Codlyf Firecrackers light up your celebrations with an unparalleled display of joy and brilliance. Located near Sattur, the heartland of firecracker manufacturing in Tamil Nadu, we bring you the finest and safest pyrotechnics directly from our heritage.</p>
-                <p class="text-lg text-gray-700 leading-relaxed mt-4">Immerse yourself in the festive spirit with our wide range of dazzling fireworks, crafted to create unforgettable moments for you and your loved ones. We ensure every spark ignites happiness.</p>
+                <h2
+                    class="text-3xl font-bold text-center md:text-left text-[var(--color-diwali-primary)] mb-6 pb-4 border-b-2 border-gray-200">
+                    Experience the Magic of Diwali</h2>
+                <p class="text-lg text-gray-700 leading-relaxed">This Diwali, let Annamalai Fireworks light up your
+                    celebrations with an unparalleled display of joy and brilliance. Located near Sattur, the heartland
+                    of firecracker manufacturing in Tamil Nadu, we bring you the finest and safest pyrotechnics directly
+                    from our heritage.</p>
+                <p class="text-lg text-gray-700 leading-relaxed mt-4">Immerse yourself in the festive spirit with our
+                    wide range of dazzling fireworks, crafted to create unforgettable moments for you and your loved
+                    ones. We ensure every spark ignites happiness.</p>
             </div>
         </section>
 
         <!-- Legacy Section -->
-        <section class="bg-white p-8 mb-8 rounded-xl shadow-md transition-all duration-300 hover:shadow-lg flex flex-col md:flex-row-reverse items-center gap-8">
+        <section
+            class="bg-white p-8 mb-8 rounded-xl shadow-md transition-all duration-300 hover:shadow-lg flex flex-col md:flex-row-reverse items-center gap-8">
             <div class="md:w-1/2">
-                <img src="https://placehold.co/600x400/CC0000/FFFFFF?text=Firecracker+Craftsmanship" alt="Traditional firecracker making" class="w-full h-auto rounded-lg shadow-md section-image">
+                <img src="assets/firework-craftmanship.png"
+                    alt="Traditional firework making" class="w-full h-auto rounded-lg shadow-md section-image">
             </div>
             <div class="md:w-1/2">
-                <h2 class="text-3xl font-bold text-center md:text-left text-[var(--color-diwali-primary)] mb-6 pb-4 border-b-2 border-gray-200">Our Legacy of Light</h2>
-                <p class="text-lg text-gray-700 leading-relaxed">For over four decades, Codlyf Firecrackers has been synonymous with quality and tradition. Founded in 1980, our commitment to crafting superior firecrackers has made us a trusted name in every Indian home during the festive season. We blend age-old techniques with modern safety standards, ensuring every sparkle, every burst, is a moment of pure delight.</p>
-                <p class="text-lg text-gray-700 leading-relaxed mt-4">Our journey began with a passion for pyrotechnics and a dedication to excellence. We take pride in our heritage, bringing you products that are not just firecrackers, but a part of your cherished Diwali memories.</p>
+                <h2
+                    class="text-3xl font-bold text-center md:text-left text-[var(--color-diwali-primary)] mb-6 pb-4 border-b-2 border-gray-200">
+                    Our Legacy of Light</h2>
+                <p class="text-lg text-gray-700 leading-relaxed">For over four decades, Annamalai Fireworks has been
+                    synonymous with quality and tradition. Founded in 1980, our commitment to crafting superior
+                    Fireworks has made us a trusted name in every Indian home during the festive season. We blend
+                    age-old techniques with modern safety standards, ensuring every sparkle, every burst, is a moment of
+                    pure delight.</p>
+                <p class="text-lg text-gray-700 leading-relaxed mt-4">Our journey began with a passion for pyrotechnics
+                    and a dedication to excellence. We take pride in our heritage, bringing you products that are not
+                    just Fireworks, but a part of your cherished Diwali memories.</p>
             </div>
         </section>
 
         <!-- Collection Section with Images -->
-        <section id="collection-section" class="bg-white p-8 mb-8 rounded-xl shadow-md transition-all duration-300 hover:shadow-lg">
-            <h2 class="text-3xl font-bold text-center text-[var(--color-diwali-primary)] mb-6 pb-4 border-b-2 border-gray-200">The Codlyf Collection</h2>
-            <p class="text-lg text-gray-700 leading-relaxed mb-6">Discover a curated selection of firecrackers designed to enhance your Diwali experience. From dazzling <strong class="text-[var(--color-diwali-primary)]">aerial shots</strong> that paint the night sky to vibrant <strong class="text-[var(--color-diwali-primary)]">ground chakras</strong> that spin with fiery artistry, our range caters to every preference.</p>
+        <section id="collection-section"
+            class="bg-white p-8 mb-8 rounded-xl shadow-md transition-all duration-300 hover:shadow-lg">
+            <h2
+                class="text-3xl font-bold text-center text-[var(--color-diwali-primary)] mb-6 pb-4 border-b-2 border-gray-200">
+                The Annamalai Collection</h2>
+            <p class="text-lg text-gray-700 leading-relaxed mb-6">Discover a curated selection of Fireworks designed
+                to enhance your Diwali experience. From dazzling <strong
+                    class="text-[var(--color-diwali-primary)]">aerial shots</strong> that paint the night sky to vibrant
+                <strong class="text-[var(--color-diwali-primary)]">ground chakras</strong> that spin with fiery
+                artistry, our range caters to every preference.</p>
             <ul class="grid grid-cols-1 md:grid-cols-2 gap-6">
-                <li class="bg-[var(--color-diwali-accent-bg)] p-5 rounded-lg shadow-sm hover:shadow-md transition-shadow duration-200 flex items-center space-x-4">
-                    <img src="https://placehold.co/80x80/FF6600/FFFFFF?text=Aerial" alt="Aerial Shot Firecracker" class="w-20 h-20 object-cover rounded-md shadow-md">
+                <li
+                    class="bg-[var(--color-diwali-accent-bg)] p-5 rounded-lg shadow-sm hover:shadow-md transition-shadow duration-200 flex items-center space-x-4">
+                    <img src="assets/aerial-cracker.png" alt="Aerial Shot Firecracker"
+                        class="w-20 h-20 object-cover rounded-md shadow-md">
                     <div>
                         <strong class="text-[var(--color-diwali-primary)] block mb-1">Aerial Shots:</strong>
-                        <p class="text-gray-700 text-base">Reach for the stars with our breathtaking rockets and multi-shot aerial displays, creating a spectacular show in the night sky.</p>
+                        <p class="text-gray-700 text-base">Reach for the stars with our breathtaking rockets and
+                            multi-shot aerial displays, creating a spectacular show in the night sky.</p>
                     </div>
                 </li>
-                <li class="bg-[var(--color-diwali-accent-bg)] p-5 rounded-lg shadow-sm hover:shadow-md transition-shadow duration-200 flex items-center space-x-4">
-                    <img src="https://placehold.co/80x80/CC0000/FFFFFF?text=Spinner" alt="Ground Spinner Firecracker" class="w-20 h-20 object-cover rounded-md shadow-md">
+                <li
+                    class="bg-[var(--color-diwali-accent-bg)] p-5 rounded-lg shadow-sm hover:shadow-md transition-shadow duration-200 flex items-center space-x-4">
+                    <img src="assets/ground-spinner.png" alt="Ground Spinner Firecracker"
+                        class="w-20 h-20 object-cover rounded-md shadow-md">
                     <div>
                         <strong class="text-[var(--color-diwali-secondary)] block mb-1">Ground Spinners:</strong>
-                        <p class="text-gray-700 text-base">Mesmerizing chakras and flower pots that create intricate patterns of light, perfect for ground-level enchantment.</p>
+                        <p class="text-gray-700 text-base">Mesmerizing chakras and flower pots that create intricate
+                            patterns of light, perfect for ground-level enchantment.</p>
                     </div>
                 </li>
-                <li class="bg-[var(--color-diwali-accent-bg)] p-5 rounded-lg shadow-sm hover:shadow-md transition-shadow duration-200 flex items-center space-x-4">
-                    <img src="https://placehold.co/80x80/FFD700/000000?text=Sparkler" alt="Sparkler Firecracker" class="w-20 h-20 object-cover rounded-md shadow-md">
+                <li
+                    class="bg-[var(--color-diwali-accent-bg)] p-5 rounded-lg shadow-sm hover:shadow-md transition-shadow duration-200 flex items-center space-x-4">
+                    <img src="assets/sparkler.png" alt="Sparkler Firecracker"
+                        class="w-20 h-20 object-cover rounded-md shadow-md">
                     <div>
                         <strong class="text-[var(--color-diwali-gold)] block mb-1">Sparklers & Anar:</strong>
-                        <p class="text-gray-700 text-base">Safe and joyful options for all ages, perfect for family fun and creating gentle sparks of happiness.</p>
+                        <p class="text-gray-700 text-base">Safe and joyful options for all ages, perfect for family fun
+                            and creating gentle sparks of happiness.</p>
                     </div>
                 </li>
-                <li class="bg-[var(--color-diwali-accent-bg)] p-5 rounded-lg shadow-sm hover:shadow-md transition-shadow duration-200 flex items-center space-x-4">
-                    <img src="https://placehold.co/80x80/FF6600/FFFFFF?text=Sound" alt="Sound Cracker" class="w-20 h-20 object-cover rounded-md shadow-md">
+                <li
+                    class="bg-[var(--color-diwali-accent-bg)] p-5 rounded-lg shadow-sm hover:shadow-md transition-shadow duration-200 flex items-center space-x-4">
+                    <img src="assets/sound-cracker.png" alt="Sound Cracker"
+                        class="w-20 h-20 object-cover rounded-md shadow-md">
                     <div>
                         <strong class="text-[var(--color-diwali-primary)] block mb-1">Sound Crackers:</strong>
-                        <p class="text-gray-700 text-base">Experience the classic thrill with our diverse range of sound-producing crackers, from mild crackles to joyous bursts.</p>
+                        <p class="text-gray-700 text-base">Experience the classic thrill with our diverse range of
+                            sound-producing crackers, from mild crackles to joyous bursts.</p>
                     </div>
                 </li>
             </ul>
         </section>
 
         <!-- Personalized Recommendation Section -->
-        <section class="bg-[var(--color-diwali-accent-bg)] p-8 mb-8 rounded-xl shadow-md border-l-4 border-[var(--color-diwali-gold)] transition-all duration-300 hover:shadow-lg text-center">
-            <h2 class="text-3xl font-bold text-center text-[var(--color-diwali-primary)] mb-6 pb-4 border-b-2 border-gray-200">✨ Find Your Perfect Diwali Sparkle ✨</h2>
-            <p class="text-lg text-gray-700 leading-relaxed mb-6">Let our AI guide you to the ideal firecracker selection for your celebration! Answer a few quick questions to get a tailored recommendation.</p>
-            <button id="getRecommendationBtn" class="bg-[var(--color-diwali-primary)] hover:bg-[var(--color-diwali-secondary)] text-white font-bold py-3 px-8 rounded-full shadow-lg transition-all duration-300 transform hover:scale-105 focus:outline-none focus:ring-4 focus:ring-[var(--color-diwali-primary)]">
+        <section
+            class="bg-[var(--color-diwali-accent-bg)] p-8 mb-8 rounded-xl shadow-md border-l-4 border-[var(--color-diwali-gold)] transition-all duration-300 hover:shadow-lg text-center">
+            <h2
+                class="text-3xl font-bold text-center text-[var(--color-diwali-primary)] mb-6 pb-4 border-b-2 border-gray-200">
+                ✨ Find Your Perfect Diwali Sparkle ✨</h2>
+            <p class="text-lg text-gray-700 leading-relaxed mb-6">Let our AI guide you to the ideal firecracker
+                selection for your celebration! Answer a few quick questions to get a tailored recommendation.</p>
+            <button id="getRecommendationBtn"
+                class="bg-[var(--color-diwali-primary)] hover:bg-[var(--color-diwali-secondary)] text-white font-bold py-3 px-8 rounded-full shadow-lg transition-all duration-300 transform hover:scale-105 focus:outline-none focus:ring-4 focus:ring-[var(--color-diwali-primary)]">
                 Get Personalized Recommendation
             </button>
             <div id="recommendationResult" class="mt-8 p-6 bg-white rounded-lg text-left hidden">
@@ -283,57 +210,90 @@
 
         <!-- Testimonials Section -->
         <section class="bg-white p-8 mb-8 rounded-xl shadow-md transition-all duration-300 hover:shadow-lg">
-            <h2 class="text-3xl font-bold text-center text-[var(--color-diwali-primary)] mb-6 pb-4 border-b-2 border-gray-200">What Our Customers Say</h2>
+            <h2
+                class="text-3xl font-bold text-center text-[var(--color-diwali-primary)] mb-6 pb-4 border-b-2 border-gray-200">
+                What Our Customers Say</h2>
             <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
-                <div class="bg-[var(--color-diwali-accent-bg)] p-6 rounded-lg shadow-sm border-l-4 border-[var(--color-diwali-gold)] testimonial-card">
-                    <p class="italic text-gray-800 mb-4">"Codlyf Firecrackers made our Diwali truly special! The quality was exceptional, and the delivery was so prompt. Highly recommend for a safe and spectacular celebration. We'll definitely be back next year!"</p>
+                <div
+                    class="bg-[var(--color-diwali-accent-bg)] p-6 rounded-lg shadow-sm border-l-4 border-[var(--color-diwali-gold)] testimonial-card">
+                    <p class="italic text-gray-800 mb-4">"Annamalai Fireworks made our Diwali truly special! The quality
+                        was exceptional, and the delivery was so prompt. Highly recommend for a safe and spectacular
+                        celebration. We'll definitely be back next year!"</p>
                     <p class="font-semibold text-[var(--color-diwali-dark)] text-right">- Priya S., Chennai</p>
                 </div>
-                <div class="bg-[var(--color-diwali-accent-bg)] p-6 rounded-lg shadow-sm border-l-4 border-[var(--color-diwali-gold)] testimonial-card">
-                    <p class="italic text-gray-800 mb-4">"As a regular customer, I can vouch for their genuine products and excellent rates. Every year, Codlyf delivers the best. Their aerial shots are a must-buy and always impress everyone!"</p>
+                <div
+                    class="bg-[var(--color-diwali-accent-bg)] p-6 rounded-lg shadow-sm border-l-4 border-[var(--color-diwali-gold)] testimonial-card">
+                    <p class="italic text-gray-800 mb-4">"As a regular customer, I can vouch for their genuine products
+                        and excellent rates. Every year, Annamalai delivers the best. Their aerial shots are a must-buy and
+                        always impress everyone!"</p>
                     <p class="font-semibold text-[var(--color-diwali-dark)] text-right">- Karthik R., Madurai</p>
                 </div>
-                <div class="bg-[var(--color-diwali-accent-bg)] p-6 rounded-lg shadow-sm border-l-4 border-[var(--color-diwali-gold)] testimonial-card">
-                    <p class="italic text-gray-800 mb-4">"The personalized recommendation feature was fantastic! It helped us choose the perfect crackers for our family celebration with kids. Safety is clearly their top priority, which gives us peace of mind."</p>
+                <div
+                    class="bg-[var(--color-diwali-accent-bg)] p-6 rounded-lg shadow-sm border-l-4 border-[var(--color-diwali-gold)] testimonial-card">
+                    <p class="italic text-gray-800 mb-4">"The personalized recommendation feature was fantastic! It
+                        helped us choose the perfect crackers for our family celebration with kids. Safety is clearly
+                        their top priority, which gives us peace of mind."</p>
                     <p class="font-semibold text-[var(--color-diwali-dark)] text-right">- Anand V., Coimbatore</p>
                 </div>
-                <div class="bg-[var(--color-diwali-accent-bg)] p-6 rounded-lg shadow-sm border-l-4 border-[var(--color-diwali-gold)] testimonial-card">
-                    <p class="italic text-gray-800 mb-4">"Absolutely thrilled with the variety and vibrancy of crackers from Codlyf. Our street looked like a festival wonderland. Great service and truly a trusted brand for Diwali."</p>
+                <div
+                    class="bg-[var(--color-diwali-accent-bg)] p-6 rounded-lg shadow-sm border-l-4 border-[var(--color-diwali-gold)] testimonial-card">
+                    <p class="italic text-gray-800 mb-4">"Absolutely thrilled with the variety and vibrancy of crackers
+                        from Annamalai. Our street looked like a festival wonderland. Great service and truly a trusted
+                        brand for Diwali."</p>
                     <p class="font-semibold text-[var(--color-diwali-dark)] text-right">- Meena K., Salem</p>
                 </div>
             </div>
         </section>
 
         <!-- Safety Section -->
-        <section class="bg-[var(--color-diwali-accent-bg)] p-8 mb-8 rounded-xl shadow-md border-l-4 border-[var(--color-diwali-secondary)] transition-all duration-300 hover:shadow-lg flex flex-col md:flex-row items-center gap-8">
+        <section
+            class="bg-[var(--color-diwali-accent-bg)] p-8 mb-8 rounded-xl shadow-md border-l-4 border-[var(--color-diwali-secondary)] transition-all duration-300 hover:shadow-lg flex flex-col md:flex-row items-center gap-8">
             <div class="md:w-1/2">
-                <img src="https://placehold.co/600x400/FFD700/000000?text=Safety+First" alt="Safety gear for firecrackers" class="w-full h-auto rounded-lg shadow-md section-image">
+                <img src="assets/safety-first.png"
+                    alt="Safety gear for Fireworks" class="w-full h-auto rounded-lg shadow-md section-image">
             </div>
             <div class="md:w-1/2">
-                <h2 class="text-3xl font-bold text-center md:text-left text-[var(--color-diwali-primary)] mb-6 pb-4 border-b-2 border-gray-200">Safety First, Always</h2>
-                <p class="text-lg text-gray-700 leading-relaxed">Your safety is our priority. All Codlyf Firecrackers are manufactured with the highest quality raw materials and undergo rigorous testing. We adhere strictly to all safety regulations, ensuring a secure and enjoyable celebration for you and your loved ones. Please follow the instructions on our packaging and celebrate responsibly.</p>
-                <p class="text-lg text-gray-700 leading-relaxed mt-4">Always use firecrackers in open spaces, away from flammable materials. Keep a bucket of water or sand nearby for emergencies. Supervise children and ensure they use sparklers under adult guidance. Celebrate joyfully, but always with caution.</p>
+                <h2
+                    class="text-3xl font-bold text-center md:text-left text-[var(--color-diwali-primary)] mb-6 pb-4 border-b-2 border-gray-200">
+                    Safety First, Always</h2>
+                <p class="text-lg text-gray-700 leading-relaxed">Your safety is our priority. All Annamalai Fireworks
+                    are manufactured with the highest quality raw materials and undergo rigorous testing. We adhere
+                    strictly to all safety regulations, ensuring a secure and enjoyable celebration for you and your
+                    loved ones. Please follow the instructions on our packaging and celebrate responsibly.</p>
+                <p class="text-lg text-gray-700 leading-relaxed mt-4">Always use Fireworks in open spaces, away from
+                    flammable materials. Keep a bucket of water or sand nearby for emergencies. Supervise children and
+                    ensure they use sparklers under adult guidance. Celebrate joyfully, but always with caution.</p>
             </div>
         </section>
 
         <!-- Contact Section -->
-        <section id="contact-section" class="bg-white p-8 mb-8 rounded-xl shadow-md transition-all duration-300 hover:shadow-lg text-center flex flex-col md:flex-row-reverse items-center gap-8">
+        <section id="contact-section"
+            class="bg-white p-8 mb-8 rounded-xl shadow-md transition-all duration-300 hover:shadow-lg text-center flex flex-col md:flex-row-reverse items-center gap-8">
             <div class="md:w-1/2">
-                <img src="https://placehold.co/600x400/FF6600/FFFFFF?text=Contact+Us" alt="Contact us illustration" class="w-full h-auto rounded-lg shadow-md section-image">
+                <img src="https://placehold.co/600x400/FF6600/FFFFFF?text=Contact+Us" alt="Contact us illustration"
+                    class="w-full h-auto rounded-lg shadow-md section-image">
             </div>
             <div class="md:w-1/2">
-                <h2 class="text-3xl font-bold text-center md:text-left text-[var(--color-diwali-primary)] mb-6 pb-4 border-b-2 border-gray-200">Visit Us Near Sattur</h2>
-                <p class="text-lg text-gray-700 leading-relaxed mb-6">We invite you to visit our facility near Sattur, Tamil Nadu, to experience the Codlyf difference firsthand. Our knowledgeable team will assist you in selecting the perfect firecrackers for your Diwali celebrations.</p>
+                <h2
+                    class="text-3xl font-bold text-center md:text-left text-[var(--color-diwali-primary)] mb-6 pb-4 border-b-2 border-gray-200">
+                    Visit Us Near Sattur</h2>
+                <p class="text-lg text-gray-700 leading-relaxed mb-6">We invite you to visit our facility near Sattur,
+                    Tamil Nadu, to experience the Annamalai difference firsthand. Our knowledgeable team will assist you in
+                    selecting the perfect Fireworks for your Diwali celebrations.</p>
                 <address class="not-italic text-[var(--color-diwali-dark)] text-lg mb-6 text-left">
-                    <strong class="block text-xl mb-2">Codlyf Firecrackers</strong>
+                    <strong class="block text-xl mb-2">Annamalai Fireworks</strong>
                     <p>123, Sparkle Lane,</p>
                     <p>Near National Highway 44,</p>
                     <p>Sattur, Virudhunagar District,</p>
                     <p>Tamil Nadu, India - 626203</p>
-                    <p class="mt-2">Phone: <a href="tel:+919876543210" class="text-[var(--color-diwali-primary)] hover:underline">+91 98765 43210</a></p>
-                    <p>Email: <a href="mailto:info@codlyffirecrackers.com" class="text-[var(--color-diwali-primary)] hover:underline">info@codlyffirecrackers.com</a></p>
+                    <p class="mt-2">Phone: <a href="tel:+919876543210"
+                            class="text-[var(--color-diwali-primary)] hover:underline">+91 98765 43210</a></p>
+                    <p>Email: <a href="mailto:info@AnnamalaiFireworks.com"
+                            class="text-[var(--color-diwali-primary)] hover:underline">info@AnnamalaiFireworks.com</a>
+                    </p>
                 </address>
-                <button id="contactButton" class="bg-[var(--color-diwali-primary)] hover:bg-[var(--color-diwali-secondary)] text-white font-bold py-3 px-8 rounded-full shadow-lg transition-all duration-300 transform hover:scale-105 focus:outline-none focus:ring-4 focus:ring-[var(--color-diwali-primary)]">
+                <button id="contactButton"
+                    class="bg-[var(--color-diwali-primary)] hover:bg-[var(--color-diwali-secondary)] text-white font-bold py-3 px-8 rounded-full shadow-lg transition-all duration-300 transform hover:scale-105 focus:outline-none focus:ring-4 focus:ring-[var(--color-diwali-primary)]">
                     Get Directions
                 </button>
                 <p id="contactMessage" class="mt-4 text-sm text-gray-600 hidden">
@@ -345,16 +305,18 @@
 
     <!-- Footer -->
     <footer class="bg-[var(--color-diwali-dark)] text-white text-center py-6 mt-auto rounded-t-xl shadow-inner">
-        <p class="text-lg">&copy; 2025 Codlyf Firecrackers. Light Up Your Diwali with Codlyf.</p>
+        <p class="text-lg">&copy; 2025 Annamalai Fireworks. Light Up Your Diwali with our crackers.</p>
     </footer>
 
     <!-- Recommendation Modal -->
     <div id="recommendationModal" class="fixed inset-0 flex items-center justify-center hidden modal-overlay">
         <div class="bg-white p-8 rounded-xl shadow-2xl max-w-lg w-full m-4 modal-content transform scale-95 opacity-0">
-            <h3 class="text-2xl font-bold text-[var(--color-diwali-primary)] mb-6 text-center">Tell Us Your Preferences</h3>
+            <h3 class="text-2xl font-bold text-[var(--color-diwali-primary)] mb-6 text-center">Tell Us Your Preferences
+            </h3>
             <div class="mb-4">
                 <label for="budget" class="block text-gray-700 text-sm font-bold mb-2">Budget:</label>
-                <select id="budget" class="shadow border border-gray-300 rounded-lg w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline focus:border-[var(--color-diwali-primary)]">
+                <select id="budget"
+                    class="shadow border border-gray-300 rounded-lg w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline focus:border-[var(--color-diwali-primary)]">
                     <option value="low">Low (Under ₹500)</option>
                     <option value="medium" selected>Medium (₹500 - ₹2000)</option>
                     <option value="high">High (Above ₹2000)</option>
@@ -362,7 +324,8 @@
             </div>
             <div class="mb-4">
                 <label for="effect" class="block text-gray-700 text-sm font-bold mb-2">Preferred Effect:</label>
-                <select id="effect" class="shadow border border-gray-300 rounded-lg w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline focus:border-[var(--color-diwali-primary)]">
+                <select id="effect"
+                    class="shadow border border-gray-300 rounded-lg w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline focus:border-[var(--color-diwali-primary)]">
                     <option value="light">Light (Visuals, less sound)</option>
                     <option value="sound">Sound (Crackling, booming)</option>
                     <option value="aerial">Aerial (Rockets, multi-shots)</option>
@@ -370,8 +333,10 @@
                 </select>
             </div>
             <div class="mb-6">
-                <label for="celebrationType" class="block text-gray-700 text-sm font-bold mb-2">Celebrating With:</label>
-                <select id="celebrationType" class="shadow border border-gray-300 rounded-lg w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline focus:border-[var(--color-diwali-primary)]">
+                <label for="celebrationType" class="block text-gray-700 text-sm font-bold mb-2">Celebrating
+                    With:</label>
+                <select id="celebrationType"
+                    class="shadow border border-gray-300 rounded-lg w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline focus:border-[var(--color-diwali-primary)]">
                     <option value="family-kids" selected>Family (with kids)</option>
                     <option value="friends-adults">Friends (adults)</option>
                     <option value="large-gathering">Large Gathering</option>
@@ -379,182 +344,19 @@
                 </select>
             </div>
             <div class="flex justify-between items-center">
-                <button id="generateRecommendationBtn" class="bg-[var(--color-diwali-primary)] hover:bg-[var(--color-diwali-secondary)] text-white font-bold py-2 px-6 rounded-full shadow-md transition-all duration-300">
+                <button id="generateRecommendationBtn"
+                    class="bg-[var(--color-diwali-primary)] hover:bg-[var(--color-diwali-secondary)] text-white font-bold py-2 px-6 rounded-full shadow-md transition-all duration-300">
                     Generate Recommendation
                 </button>
-                <button id="closeModalBtn" class="bg-gray-300 hover:bg-gray-400 text-gray-800 font-bold py-2 px-6 rounded-full shadow-md transition-all duration-300">
+                <button id="closeModalBtn"
+                    class="bg-gray-300 hover:bg-gray-400 text-gray-800 font-bold py-2 px-6 rounded-full shadow-md transition-all duration-300">
                     Close
                 </button>
             </div>
         </div>
     </div>
 
-    <script>
-        document.addEventListener('DOMContentLoaded', function() {
-            const contactButton = document.getElementById('contactButton');
-            const contactMessage = document.getElementById('contactMessage');
-            const getRecommendationBtn = document.getElementById('getRecommendationBtn');
-            const recommendationModal = document.getElementById('recommendationModal');
-            const closeModalBtn = document.getElementById('closeModalBtn');
-            const generateRecommendationBtn = document.getElementById('generateRecommendationBtn');
-            const recommendationResult = document.getElementById('recommendationResult');
-            const recommendationText = document.getElementById('recommendationText');
-            const loadingIndicator = document.getElementById('loadingIndicator');
-
-            // --- Contact Button Logic ---
-            if (contactButton) {
-                contactButton.addEventListener('click', function() {
-                    contactMessage.classList.remove('hidden');
-                    // In a real application, this would open Google Maps or a contact form.
-                    // Example: window.open('https://www.google.com/maps/search/?api=1&query=Your+Address+Near+Sattur', '_blank');
-                });
-            }
-
-            // --- Section Fade-in Animation Logic for Text Content ---
-            const sections = document.querySelectorAll('section:not(.hero-bg):not(.info-bar-section):not(.marquee-container)');
-            const options = {
-                threshold: 0.1 // Trigger when 10% of the section is visible
-            };
-
-            const observer = new IntersectionObserver((entries, observer) => {
-                entries.forEach(entry => {
-                    if (entry.isIntersecting) {
-                        entry.target.classList.add('opacity-100', 'translate-y-0');
-                        entry.target.classList.remove('opacity-0', 'translate-y-8');
-                    }
-                });
-            }, options);
-
-            sections.forEach(section => {
-                section.classList.add('opacity-0', 'translate-y-8', 'transition-all', 'duration-700', 'ease-out');
-                observer.observe(section);
-            });
-
-            // --- Image Fade-in/Scale Animation Logic for Section Images ---
-            const sectionImages = document.querySelectorAll('.section-image');
-            const imageOptions = {
-                threshold: 0.3 // Trigger when 30% of the image is visible
-            };
-
-            const imageObserver = new IntersectionObserver((entries, observer) => {
-                entries.forEach(entry => {
-                    if (entry.isIntersecting) {
-                        entry.target.classList.add('is-visible');
-                    } else {
-                        // Optional: reset animation when out of view
-                        // entry.target.classList.remove('is-visible');
-                    }
-                });
-            }, imageOptions);
-
-            sectionImages.forEach(image => {
-                imageObserver.observe(image);
-            });
-
-            // --- Testimonial Card Animation Logic ---
-            const testimonialCards = document.querySelectorAll('.testimonial-card');
-            const testimonialOptions = {
-                threshold: 0.2 // Trigger when 20% of the card is visible
-            };
-
-            const testimonialObserver = new IntersectionObserver((entries, observer) => {
-                entries.forEach(entry => {
-                    if (entry.isIntersecting) {
-                        entry.target.classList.add('opacity-100', 'translate-y-0');
-                        entry.target.classList.remove('opacity-0', 'translate-y-8');
-                    }
-                });
-            }, testimonialOptions);
-
-            testimonialCards.forEach(card => {
-                card.classList.add('opacity-0', 'translate-y-8', 'transition-all', 'duration-700', 'ease-out');
-                testimonialObserver.observe(card);
-            });
-
-
-            // --- Recommendation Modal Logic ---
-            getRecommendationBtn.addEventListener('click', () => {
-                recommendationModal.classList.remove('hidden');
-                // Apply fade-in animation to modal content
-                setTimeout(() => {
-                    recommendationModal.querySelector('.modal-content').classList.add('animate-fade-in');
-                    recommendationModal.querySelector('.modal-content').classList.remove('opacity-0', 'scale-95');
-                }, 10); // Small delay to ensure hidden is removed first
-            });
-
-            closeModalBtn.addEventListener('click', () => {
-                recommendationModal.querySelector('.modal-content').classList.add('animate-fade-out');
-                recommendationModal.querySelector('.modal-content').classList.remove('animate-fade-in');
-                setTimeout(() => {
-                    recommendationModal.classList.add('hidden');
-                    recommendationModal.querySelector('.modal-content').classList.remove('animate-fade-out');
-                    recommendationModal.querySelector('.modal-content').classList.add('opacity-0', 'scale-95');
-                }, 500); // Match animation duration
-            });
-
-            // --- Gemini API Call for Recommendation ---
-            generateRecommendationBtn.addEventListener('click', async () => {
-                const budget = document.getElementById('budget').value;
-                const effect = document.getElementById('effect').value;
-                const celebrationType = document.getElementById('celebrationType').value;
-
-                // Show loading indicator
-                loadingIndicator.classList.remove('hidden');
-                recommendationResult.classList.remove('hidden'); // Ensure result area is visible
-                recommendationText.innerHTML = ''; // Clear previous results
-
-                const prompt = `As a firecracker expert for Codlyf Firecrackers near Sattur, Tamil Nadu, suggest a personalized firecracker package for Diwali.
-                User preferences:
-                - Budget: ${budget}
-                - Preferred Effect: ${effect}
-                - Celebrating With: ${celebrationType}
-
-                Please provide a creative and appealing recommendation, including specific types of firecrackers (e.g., '100-shot aerial display', 'colorful ground chakras', 'safe sparklers for kids'). Keep it concise and festive, around 2-3 paragraphs.`;
-
-                let chatHistory = [];
-                chatHistory.push({ role: "user", parts: [{ text: prompt }] });
-
-                const payload = { contents: chatHistory };
-                const apiKey = ""; // Canvas will automatically provide the API key
-                const apiUrl = `https://generativelanguage.googleapis.com/v1beta/models/gemini-2.0-flash:generateContent?key=${apiKey}`;
-
-                try {
-                    const response = await fetch(apiUrl, {
-                        method: 'POST',
-                        headers: { 'Content-Type': 'application/json' },
-                        body: JSON.stringify(payload)
-                    });
-
-                    if (!response.ok) {
-                        throw new Error(`HTTP error! status: ${response.status}`);
-                    }
-
-                    const result = await response.json();
-
-                    if (result.candidates && result.candidates.length > 0 &&
-                        result.candidates[0].content && result.candidates[0].content.parts &&
-                        result.candidates[0].content.parts.length > 0) {
-                        const text = result.candidates[0].content.parts[0].text;
-                        recommendationText.innerHTML = text.replace(/\n/g, '<br>'); // Display text, preserving newlines
-                    } else {
-                        recommendationText.innerHTML = 'Sorry, I could not generate a recommendation at this time. Please try again!';
-                    }
-                } catch (error) {
-                    console.error("Error calling Gemini API:", error);
-                    recommendationText.innerHTML = 'An error occurred while fetching the recommendation. Please try again later.';
-                } finally {
-                    loadingIndicator.classList.add('hidden'); // Hide loading indicator
-                    // Hide modal after generation
-                    recommendationModal.querySelector('.modal-content').classList.add('animate-fade-out');
-                    recommendationModal.querySelector('.modal-content').classList.remove('animate-fade-in');
-                    setTimeout(() => {
-                        recommendationModal.classList.add('hidden');
-                        recommendationModal.querySelector('.modal-content').classList.remove('animate-fade-out');
-                        recommendationModal.querySelector('.modal-content').classList.add('opacity-0', 'scale-95');
-                    }, 500);
-                }
-            });
-        });
-    </script>
+    <script src="script.js"></script>
 </body>
+
 </html>
